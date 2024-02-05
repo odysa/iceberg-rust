@@ -500,7 +500,10 @@ impl AvroSchemaVisitor for AvroSchemaToSchema {
 pub(crate) fn avro_schema_to_schema(avro_schema: &AvroSchema) -> Result<Schema> {
     if let AvroSchema::Record(_) = avro_schema {
         let mut converter = AvroSchemaToSchema { next_id: 0 };
-        let typ = visit(avro_schema, &mut converter)?.expect("Iceberg schema should not be none.");
+        let typ = visit(avro_schema, &mut converter)?.ok_or(Error::new(
+            ErrorKind::Unexpected,
+            "Iceberg schema should not be none.",
+        ))?;
         if let Type::Struct(s) = typ {
             Schema::builder()
                 .with_fields(s.fields().iter().cloned())
@@ -705,7 +708,7 @@ mod tests {
             "field-id": 100
         }
     ]
-}            
+}
 "#,
             )
             .unwrap()
@@ -768,7 +771,7 @@ mod tests {
             "field-id": 100
         }
     ]
-}            
+}
 "#,
             )
             .unwrap()
@@ -915,7 +918,7 @@ mod tests {
             "type": "string"
         }
     ]
-}               
+}
 "#,
             )
             .unwrap()

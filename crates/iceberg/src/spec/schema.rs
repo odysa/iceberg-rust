@@ -169,9 +169,10 @@ impl SchemaBuilder {
 
             let mut cur_field_id = identifier_field_id;
             while let Some(parent) = id_to_parent.get(&cur_field_id) {
-                let parent_field = id_to_field
-                    .get(parent)
-                    .expect("Field id should not disappear.");
+                let parent_field = id_to_field.get(parent).ok_or(Error::new(
+                    ErrorKind::Unexpected,
+                    "Field id should not disappear.",
+                ))?;
                 ensure_data_valid!(
                     parent_field.field_type.is_struct(),
                     "Cannot add field {} as an identifier field: must not be nested in {:?}",
@@ -973,9 +974,9 @@ mod tests {
     fn test_schema_display() {
         let expected_str = r#"
 table {
-  1: foo: optional string 
-  2: bar: required int 
-  3: baz: optional boolean 
+  1: foo: optional string
+  2: bar: required int
+  3: baz: optional boolean
 }
 "#;
 
