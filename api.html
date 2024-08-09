@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="install.html">Install</a></li><li class="chapter-item expanded "><a href="download.html">Download</a></li><li class="chapter-item expanded "><a href="api.html" class="active">API</a></li><li class="chapter-item expanded affix "><li class="part-title">Developer Guide</li><li class="chapter-item expanded "><a href="CONTRIBUTING.html">Contributing</a></li><li class="chapter-item expanded "><a href="release.html">Release</a></li><li class="chapter-item expanded affix "><li class="part-title">Reference</li><li class="chapter-item expanded "><a href="reference/setup_gpg.html">Setup GPG key</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="install.html">Install</a></li><li class="chapter-item expanded "><a href="download.html">Download</a></li><li class="chapter-item expanded "><a href="api.html" class="active">API</a></li><li class="chapter-item expanded affix "><li class="part-title">Developer Guide</li><li class="chapter-item expanded "><a href="CONTRIBUTING.html">Contributing</a></li><li class="chapter-item expanded "><a href="release.html">Release</a></li><li class="chapter-item expanded affix "><li class="part-title">Reference</li><li class="chapter-item expanded "><a href="reference/podman.html">Using Podman instead of Docker</a></li><li class="chapter-item expanded "><a href="reference/setup_gpg.html">Setup GPG key</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -222,9 +222,10 @@ example of how to create a <code>RestCatalog</code>:</p>
 </span><span class="boring">// specific language governing permissions and limitations
 </span><span class="boring">// under the License.
 </span><span class="boring">
+</span><span class="boring">use std::collections::HashMap;
+</span><span class="boring">
 </span><span class="boring">use iceberg::{Catalog, NamespaceIdent};
 </span><span class="boring">use iceberg_catalog_rest::{RestCatalog, RestCatalogConfig};
-</span><span class="boring">use std::collections::HashMap;
 </span><span class="boring">
 </span><span class="boring">#[tokio::main]
 </span><span class="boring">async fn main() {
@@ -270,9 +271,10 @@ example of how to create a <code>RestCatalog</code>:</p>
 </span><span class="boring">// specific language governing permissions and limitations
 </span><span class="boring">// under the License.
 </span><span class="boring">
+</span><span class="boring">use std::collections::HashMap;
+</span><span class="boring">
 </span><span class="boring">use iceberg::{Catalog, NamespaceIdent};
 </span><span class="boring">use iceberg_catalog_rest::{RestCatalog, RestCatalogConfig};
-</span><span class="boring">use std::collections::HashMap;
 </span><span class="boring">
 </span><span class="boring">#[tokio::main]
 </span><span class="boring">async fn main() {
@@ -318,9 +320,10 @@ example of how to create a <code>RestCatalog</code>:</p>
 </span><span class="boring">// specific language governing permissions and limitations
 </span><span class="boring">// under the License.
 </span><span class="boring">
+</span><span class="boring">use std::collections::HashMap;
+</span><span class="boring">
 </span><span class="boring">use iceberg::{Catalog, NamespaceIdent};
 </span><span class="boring">use iceberg_catalog_rest::{RestCatalog, RestCatalogConfig};
-</span><span class="boring">use std::collections::HashMap;
 </span><span class="boring">
 </span><span class="boring">#[tokio::main]
 </span><span class="boring">async fn main() {
@@ -368,10 +371,11 @@ example of how to create a <code>RestCatalog</code>:</p>
 </span><span class="boring">// specific language governing permissions and limitations
 </span><span class="boring">// under the License.
 </span><span class="boring">
+</span><span class="boring">use std::collections::HashMap;
+</span><span class="boring">
 </span><span class="boring">use iceberg::spec::{NestedField, PrimitiveType, Schema, Type};
 </span><span class="boring">use iceberg::{Catalog, TableCreation, TableIdent};
 </span><span class="boring">use iceberg_catalog_rest::{RestCatalog, RestCatalogConfig};
-</span><span class="boring">use std::collections::HashMap;
 </span><span class="boring">
 </span><span class="boring">#[tokio::main]
 </span><span class="boring">async fn main() {
@@ -433,10 +437,11 @@ example of how to create a <code>RestCatalog</code>:</p>
 </span><span class="boring">// specific language governing permissions and limitations
 </span><span class="boring">// under the License.
 </span><span class="boring">
+</span><span class="boring">use std::collections::HashMap;
+</span><span class="boring">
 </span><span class="boring">use iceberg::spec::{NestedField, PrimitiveType, Schema, Type};
 </span><span class="boring">use iceberg::{Catalog, TableCreation, TableIdent};
 </span><span class="boring">use iceberg_catalog_rest::{RestCatalog, RestCatalogConfig};
-</span><span class="boring">use std::collections::HashMap;
 </span><span class="boring">
 </span><span class="boring">#[tokio::main]
 </span><span class="boring">async fn main() {
